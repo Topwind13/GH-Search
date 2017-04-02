@@ -123,10 +123,8 @@
 		EE032E321E8E24F700EA3CEE /* searchRepoUserFromGithub */ = {
 			isa = PBXGroup;
 			children = (
+				EEAC89CF1E91333700E13FEF /* ViewController */,
 				EE032E331E8E24F700EA3CEE /* AppDelegate.swift */,
-				EE032E351E8E24F700EA3CEE /* SearchViewController.swift */,
-				EE032E651E8E59E100EA3CEE /* RepoTableViewCell.swift */,
-				EEEC7DEA1E8F976C00558620 /* UserTableViewCell.swift */,
 				EEEC7DE61E8F4F6C00558620 /* GHClient.swift */,
 				EE032E611E8E44AC00EA3CEE /* GHConstants.swift */,
 				EE032E631E8E478A00EA3CEE /* GCDBlackBox.swift */,
@@ -136,12 +134,6 @@
 				EE032E3A1E8E24F700EA3CEE /* Assets.xcassets */,
 				EE032E3C1E8E24F700EA3CEE /* LaunchScreen.storyboard */,
 				EE032E3F1E8E24F700EA3CEE /* Info.plist */,
-				EE750BD21E8FCE87000EE15B /* FollowerCollectionViewController.swift */,
-				EE750BD41E8FCEF9000EE15B /* FollowerCollectionViewCell.swift */,
-				EE750BD61E90111F000EE15B /* RepoCollectionViewController.swift */,
-				EE750BD81E90125B000EE15B /* RepoCollectionViewCell.swift */,
-				EE750BDC1E9022A6000EE15B /* OrgCollectionViewController.swift */,
-				EE750BDA1E90228E000EE15B /* OrgCollectionViewCell.swift */,
 			);
 			path = searchRepoUserFromGithub;
 			sourceTree = "<group>";
@@ -162,6 +154,22 @@
 				EE032E551E8E24F700EA3CEE /* Info.plist */,
 			);
 			path = searchRepoUserFromGithubUITests;
+			sourceTree = "<group>";
+		};
+		EEAC89CF1E91333700E13FEF /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EE032E351E8E24F700EA3CEE /* SearchViewController.swift */,
+				EE032E651E8E59E100EA3CEE /* RepoTableViewCell.swift */,
+				EEEC7DEA1E8F976C00558620 /* UserTableViewCell.swift */,
+				EE750BD21E8FCE87000EE15B /* FollowerCollectionViewController.swift */,
+				EE750BD41E8FCEF9000EE15B /* FollowerCollectionViewCell.swift */,
+				EE750BD61E90111F000EE15B /* RepoCollectionViewController.swift */,
+				EE750BD81E90125B000EE15B /* RepoCollectionViewCell.swift */,
+				EE750BDC1E9022A6000EE15B /* OrgCollectionViewController.swift */,
+				EE750BDA1E90228E000EE15B /* OrgCollectionViewCell.swift */,
+			);
+			name = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

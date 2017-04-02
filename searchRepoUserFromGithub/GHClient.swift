@@ -33,6 +33,7 @@ class GHClient : NSObject {
         /* 1. Set the parameters */
         var parametersWithOrder = parameters
         parametersWithOrder[ParameterKeys.Order] = ParameterValues.OrderDesc as AnyObject?
+        parametersWithOrder[ParameterKeys.perPage] = ParameterValues.perPage as AnyObject?
         
         /* 2/3. Build the URL, Configure the request */
         let request = URLRequest(url: ghURLFromParameters(parametersWithOrder, withPathExtension: method))

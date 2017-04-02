@@ -15,10 +15,10 @@ extension GHClient {
     
     // MARK: Get Repository Networks
     
-    func getRepo(_ searchString: String, completionHandlerForRepos: @escaping (_ result: [GHRepo]?, _ error: NSError?) -> Void) -> URLSessionDataTask? {
+    func getRepo(_ searchString: String, page: Int, completionHandlerForRepos: @escaping (_ result: [GHRepo]?, _ error: NSError?) -> Void) -> URLSessionDataTask? {
         
         // Specify parameters, method (if has {key}), and HTTP body (if POST)
-        let parameters = [GHClient.ParameterKeys.Search: "\(searchString.lowercased()+GHClient.ParameterValues.SearchRepo)", GHClient.ParameterKeys.Sort: GHClient.ParameterValues.SortStar]
+        let parameters = [GHClient.ParameterKeys.Search: "\(searchString.lowercased()+GHClient.ParameterValues.SearchRepo)", GHClient.ParameterKeys.Sort: GHClient.ParameterValues.SortStar, GHClient.ParameterKeys.page: String(page)]
         
         // Make the request
         let task = taskForSearchMethod(Methods.SearchRepository, parameters: parameters as [String:AnyObject]) { (results, error) in
@@ -44,10 +44,10 @@ extension GHClient {
     
     // MARK: Get Users Networks
     
-    func getUser(_ searchString: String, completionHandlerForUsers: @escaping (_ result: [GHUser]?, _ error: NSError?) -> Void) -> URLSessionDataTask? {
+    func getUser(_ searchString: String, page: Int, completionHandlerForUsers: @escaping (_ result: [GHUser]?, _ error: NSError?) -> Void) -> URLSessionDataTask? {
         
         // Specify parameters, method (if has {key}), and HTTP body (if POST)
-        let parameters = [GHClient.ParameterKeys.Search: "\(searchString.lowercased()+GHClient.ParameterValues.SearchUser)", GHClient.ParameterKeys.Sort: GHClient.ParameterValues.SortScore]
+        let parameters = [GHClient.ParameterKeys.Search: "\(searchString.lowercased()+GHClient.ParameterValues.SearchUser)", GHClient.ParameterKeys.Sort: GHClient.ParameterValues.SortScore, GHClient.ParameterKeys.page: String(page)]
         
         // Make the request
         let task = taskForSearchMethod(Methods.SearchUser, parameters: parameters as [String:AnyObject]) { (results, error) in
@@ -101,7 +101,6 @@ extension GHClient {
                 completionHandlerForRepos(nil, error)
             } else {
                 if let results = results as? [[String:AnyObject]] {
-                    print("888888888888888888888888")
                     let repos = GHRepo.reposFromResults(results)
                     completionHandlerForRepos(repos, nil)
                     

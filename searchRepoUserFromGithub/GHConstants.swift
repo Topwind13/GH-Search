@@ -35,6 +35,8 @@ extension GHClient {
         static let Search = "q"
         static let Sort = "sort"
         static let Order = "order"
+        static let page = "page"
+        static let perPage = "per_page"
     }
         
     // MARK: Github Parameter Values
@@ -44,6 +46,7 @@ extension GHClient {
         static let SortStar = "stars"
         static let SortScore = "scores"
         static let OrderDesc = "desc"
+        static let perPage = "5"
     }
         
     // MARK: Github JSON Response Keys
